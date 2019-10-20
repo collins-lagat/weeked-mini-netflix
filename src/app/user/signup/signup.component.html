@@ -1,0 +1,50 @@
+<div class="header">
+  <img class=logo-big src="assets/logo_md.png" alt="logo">
+</div>
+<span class='title center'>Getting Started</span>
+<span class='title-2 text-base center'>Already have an account?<span class="log-in secondary underline"> Log in</span></span>
+<div class='center'>
+  <form>
+      <div class="form-group">
+          <input type="text" id="name" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Name</label>
+          <span class=input-icon><fa-icon [icon]="userIcon"></fa-icon></span>
+      </div>
+      <div class="form-group">
+          <input type="email" id="email" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Email</label>
+          <span class=input-icon><fa-icon [icon]="emailIcon"></fa-icon></span>
+      </div>
+      <div class="form-group">
+          <input type="password" id="password" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Password</label>
+          <span class=input-icon><fa-icon [icon]="passwordIcon"></fa-icon></span>
+      </div>
+      <div class="form-group">
+          <input type="password" id="confirm_password" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Re-enter Password</label>
+          <span class=input-icon><fa-icon [icon]="passwordIcon"></fa-icon></span>
+      </div>
+      <div class="form-group">
+          <label class="pure-material-checkbox">
+            <input type="checkbox">
+            <span>Sign Up for newsletter</span>
+          </label>
+      </div>
+  </form>
+</div>
+<div class="actions center">
+  <button class='bg-primary ripple'>Sign Up</button>
+</div>
+<div class=center>
+  <span>By siging up you have agreed to our<span class="tlc secondary underline">terms and conditions</span></span>
+</div>
+

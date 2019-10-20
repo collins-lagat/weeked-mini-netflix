@@ -1,0 +1,26 @@
+.header > img {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.logo {
+  width: 100px;
+}
+.content {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .logo {
+    width: 100px;
+  }
+  .content {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    width: 300px;
+  }
+  .content {
+    width: 75%;
+  }
+}

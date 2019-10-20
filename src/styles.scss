@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$weeked-frontend-primary: mat-palette($mat-indigo);
+$weeked-frontend-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$weeked-frontend-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$weeked-frontend-theme: mat-light-theme($weeked-frontend-primary, $weeked-frontend-accent, $weeked-frontend-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($weeked-frontend-theme);
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import './styles/colors_fonts', './styles/forms', './styles/buttons';
+
+html, body {
+  color: $primary-text;
+  font-family: $font;
+  background-color: $bg;
+  height: 100%;
+}
+body { margin: 0;}
+
+.primary {
+  color: $primary;
+}
+.secondary {
+  color: $secondary;
+}
+.bg-primary {
+  background-color: $primary;
+}
+.bg-secondary {
+  background-color: $secondary;
+}
+
+.width-full {
+  width: 100%;
+}
+
+%flex {
+  display: flex;
+}
+
+%flex-col {
+  flex-direction: column;
+}
+
+%justify-center {
+  justify-content: center;
+}
+
+%align-center {
+  align-items: center;
+}
+
+.column {
+  @extend %flex;
+  @extend %flex-col;
+}
+.column-center {
+  @extend .column;
+  @extend %align-center;
+}
+
+.center {
+  @extend %flex;
+  @extend %justify-center;
+}
+
+
+.header {
+  @extend %flex;
+  @extend .width-full;
+  @extend %justify-center;
+}
+.logo-big {
+  width: 180px;
+}
+
+.logo-small {
+  width: 100px;
+}
+
+.title {
+  font-size: 48px;
+}
+
+.text-base {
+  font-size: 18px;
+}
+
+.button-text {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
