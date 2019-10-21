@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -23,13 +24,18 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.selectedIndex = 0;
   }
+
   handleTabChange(index): void {
     this.router.navigate([this.tabs[index].route]);
+  }
+
+  handleSignOut(): void {
+    this.authService.logout()
   }
 
 }

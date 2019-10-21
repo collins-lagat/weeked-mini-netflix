@@ -5,9 +5,10 @@ export interface IMovie {
   released: string;
   runtime: string;
   actors: Array<string>;
-  director: string;
-  genre: Array<string>;
+  director: object;
+  genres: Array<string>;
   plot: string;
+  wide_poster: string;
   poster: string;
   rottenTomato: string;
   imdb: string;

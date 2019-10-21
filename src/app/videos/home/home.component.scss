@@ -7,13 +7,16 @@
 }
 .content {
   width: 100%;
+  justify-content: start;
 }
+
 @media (min-width: 640px) {
   .logo {
     width: 100px;
   }
   .content {
     width: 100%;
+    justify-content: start;
   }
 }
 @media (min-width: 768px) {
@@ -21,6 +24,7 @@
     width: 300px;
   }
   .content {
-    width: 75%;
+    width: 90%;
+    justify-content: center;
   }
 }

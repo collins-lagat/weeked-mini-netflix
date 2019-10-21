@@ -4,13 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MovieHomeComponent } from './movie-home/movie-home.component';
 import { SeriesHomeComponent } from './series-home/series-home.component';
-import { AuthGuardService } from '../services/auth-guard.service';
 import { FeaturedComponent } from './featured/featured.component';
+import { AuthGuard } from '../services/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     component: HomeComponent,
     children: [
       {
