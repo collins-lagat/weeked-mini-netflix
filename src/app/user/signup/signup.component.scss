@@ -1,3 +1,8 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 .header > img {
   margin-top: 20px;
   margin-bottom: 70px;
@@ -15,5 +20,10 @@ span.title-2 {
 .actions {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+.tlc-container {
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
 }
 

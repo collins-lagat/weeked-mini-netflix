@@ -7,15 +7,20 @@
   width: 100vw;
 }
 
-.settings-container > .text-xl {
+.settings-title {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: start;
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .settings-container {
   display: flex;
   flex-direction: column;
   min-width: 150px;
-  max-width: 500px;
+  max-width: 300px;
   width: 100%;
 }
 .setting {
