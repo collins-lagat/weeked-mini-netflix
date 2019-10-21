@@ -1,8 +1,9 @@
 .navigation {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   bottom: 0;
   right: 0;
+  left: 0;
   height: 60px;
   display: flex;
   justify-content: center;
@@ -25,3 +26,4 @@
 .action:hover {
   color: #2F89FC;
 }
+
