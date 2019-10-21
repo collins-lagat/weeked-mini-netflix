@@ -3,23 +3,28 @@ import { Routes, RouterModule } from '@angular/router';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { GettingStartedComponent } from './getting-started/getting-started.component';
-import { GuestGuard } from '../services/guest.guard';
+import { AngularFireAuthGuard, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
+const redirectLoggedInToHome = () => redirectLoggedInTo(['/']);
 
 const routes: Routes = [
   {
     path: 'welcome',
     component: GettingStartedComponent,
-    canActivate: [GuestGuard]
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInTo }
   },
   {
     path: 'sign-in',
     component: SigninComponent,
-    canActivate: [GuestGuard]
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInTo }
   },
   {
     path: 'sign-up',
     component: SignupComponent,
-    canActivate: [GuestGuard]
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInTo }
   }
 ];
 

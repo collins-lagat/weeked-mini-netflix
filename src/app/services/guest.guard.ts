@@ -9,11 +9,6 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class GuestGuard implements CanActivate {
-  guestRoutes = [
-    '/sign-in',
-    '/sign-up',
-    '/welcome'
-  ];
 
   constructor(private authService: AuthService, private router: Router) {  }
 
@@ -22,11 +17,9 @@ export class GuestGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       return this.authService.user$.pipe(
         take(1),
-        map(user => {
-          return !!user;
-        }),
-        tap(loggedIn => {
-          if (loggedIn) {
+        map(user => !!user),
+        tap(notGuest => {
+          if (notGuest) {
             console.log('Log out first');
             this.router.navigate(['/']);
           }
