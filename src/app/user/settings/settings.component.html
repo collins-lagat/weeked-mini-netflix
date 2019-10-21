@@ -1,1 +1,27 @@
-<p>settings works!</p>
+<div class=settings>
+    <div class=settings-container>
+      <span class=text-xl>Settings</span>
+        <mat-list>
+          <mat-list-item [routerLink]="['video-streaming']" class="setting">
+            <div class='column settings-text'>
+              <span class=text-main>Video Streaming</span>
+              <span class=text-sub>Manage Quality & WIFI</span>
+            </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item [routerLink]="['notifications']" class="setting">
+            <div class='column settings-text'>
+              <span class=text-main>Notifications</span>
+              <span class=text-sub>On</span>
+            </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item [routerLink]="['auto-play']" class="setting">
+            <div class='column settings-text'>
+              <span class=text-main>Auto Play</span>
+              <span class=text-sub>Play Next Episode Automatically</span>
+            </div>
+          </mat-list-item>
+        </mat-list>
+    </div>
+</div>

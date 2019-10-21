@@ -1,1 +1,42 @@
-<p>payment-info works!</p>
+<div class='width-screen column-center root'>
+  <div>
+      <span class=text-title>Account & Payment</span>
+  </div>
+    <div class=plan>
+      <span class=text-section>Current Plan</span>
+      <mat-card>
+        <div class=card-plan>
+            <div class='item-plan check-icon'>
+              <fa-icon [icon]='checkIcon'></fa-icon>
+            </div>
+            <div class='item-plan plan-name'>
+                <span>Weeked <strong>Pro</strong> </span>
+            </div>
+            <div class='item-plan price'>
+                <span>ksh 999/month</span>
+            </div>
+        </div>
+      </mat-card>
+    </div>
+    <div class=next-charge>
+      <div>
+          Your next charge for a month of <em>Weeked <strong>Pro</strong></em> will be on <strong>Sept 24, 2019</strong>
+      </div>
+    </div>
+    <div>
+        <button class='danger ripple'>End Subsription</button>
+    </div>
+    <div class=payment-method>
+        <span class=text-section>Payment Method</span>
+        <mat-card>
+          <div class=card-payment>
+              <div class='item-payment card-icon'>
+                <fa-icon size='2x' [icon]='mastercardIcon'></fa-icon>
+              </div>
+              <div class='item-payment card-cc'>
+                  <span>**** **** **** 1234</span>
+              </div>
+          </div>
+        </mat-card>
+    </div>
+</div>

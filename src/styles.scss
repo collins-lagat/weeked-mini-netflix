@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
+@import './styles/colors_fonts';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -28,7 +29,7 @@ $weeked-frontend-theme: mat-light-theme($weeked-frontend-primary, $weeked-fronte
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-@import './styles/colors_fonts', './styles/forms', './styles/buttons';
+@import  './styles/forms', './styles/buttons';
 
 html, body {
   color: $primary-text;
@@ -44,11 +45,17 @@ body { margin: 0;}
 .secondary {
   color: $secondary;
 }
+.danger {
+  color: $danger;
+}
 .bg-primary {
   background-color: $primary;
 }
 .bg-secondary {
   background-color: $secondary;
+}
+.bg-default {
+  background-color: $bg;
 }
 
 .width-full {
@@ -89,12 +96,6 @@ body { margin: 0;}
   @extend %justify-center;
 }
 
-
-.header {
-  @extend %flex;
-  @extend .width-full;
-  @extend %justify-center;
-}
 .logo-big {
   width: 180px;
 }
@@ -107,9 +108,12 @@ body { margin: 0;}
   font-size: 48px;
 }
 
-.text-xl {
+.text-lg {
   font-size: 18px;
-  font-weight: 600;
+}
+
+.text-xl {
+  font-size: 24px;
 }
 
 .text-base {

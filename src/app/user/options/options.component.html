@@ -1,0 +1,18 @@
+<div class='width-screen column-center'>
+    <app-header></app-header>
+    <div class=options>
+        <div class=options-container>
+          <span class=text-xl>Options</span>
+            <mat-list>
+              <mat-list-item [routerLink]="['/user/personal-info']"  class="option">Personal Information</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item [routerLink]="['/user/payment-info']" class="option">Account & Payment Information</mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item [routerLink]="['/user/settings']" class="option">Your Settings</mat-list-item>
+            </mat-list>
+        </div>
+
+        <button (click)='handleSignOut()' class='ripple danger'>Log Out</button>
+    </div>
+    <app-navigation></app-navigation>
+</div>

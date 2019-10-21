@@ -1,0 +1,45 @@
+@import '../../../styles/colors_fonts';
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.header > img {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.logo {
+  width: 120px;
+}
+.back-icon {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+  margin-top: 20px;
+  background-color: $bg;
+  padding: 18px;
+  border-radius: 999px;
+}
+
+.back-icon:hover {
+  background-color: $secondary-active;
+  color: $bg;
+}
+
+@media (min-width: 640px) {
+  .logo {
+    width: 120px;
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    width: 300px;
+  }
+  .back-icon {
+    margin-left: 30px;
+    margin-top: 60px;
+  }
+}

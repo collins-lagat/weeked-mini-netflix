@@ -1,0 +1,10 @@
+<div class='content text-xl'>
+      <mat-tab-group mat-align-tabs="center" [selectedIndex]="selectedIndex" (selectedIndexChange)="handleTabChange($event)">
+        <mat-tab *ngFor="let tab of tabs" [label]="tab.name"></mat-tab>
+      </mat-tab-group>
+</div>
+<div class='movies center'>
+  <div class='movie-content center'>
+      <router-outlet></router-outlet>
+  </div>
+</div>

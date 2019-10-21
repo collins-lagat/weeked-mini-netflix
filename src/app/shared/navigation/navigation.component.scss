@@ -1,0 +1,27 @@
+.navigation {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .action {
+    cursor: pointer;
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.action:hover {
+  color: #2F89FC;
+}
