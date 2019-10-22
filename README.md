@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Link To The Website: 
+[Mini Netflix](https://weeked-mini-netflix.netlify.com/)
+This Project was done by **Collins Lagat** for **ALC4.0**.
+To Run this project
+Clone the Repo
+cd into the folder
+run ng serve
