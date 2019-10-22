@@ -1,7 +1,15 @@
 <div class='width-screen column-center'>
     <app-header></app-header>
     <div>
-        <p>watchlist works!</p>
+      <div class=title>Your Watchlist</div>
+      <div class=video *ngFor="let video of watchlist">
+        <span class=delete>
+          <fa-icon (click)="handleDelete(video)" size='2x' [icon]='deleteIcon'></fa-icon>
+        </span>
+        <div class=main>
+          <app-search-poster [video]='video'></app-search-poster>
+        </div>
+      </div>
     </div>
     <app-navigation></app-navigation>
 </div>

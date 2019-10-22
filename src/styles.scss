@@ -30,6 +30,10 @@ $weeked-frontend-theme: mat-light-theme($weeked-frontend-primary, $weeked-fronte
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @import  './styles/forms', './styles/buttons';
+@import '~ngx-bar-rating/themes/br-default-theme.css';
+//  @import '~ngx-bar-rating/themes/br-horizontal-theme.css';
+@import '~ngx-bar-rating/themes/br-fontawesome-theme.css';
+@import '~ngx-bar-rating/themes/br-fontawesome-o-theme.css';
 
 html, body {
   color: $primary-text;

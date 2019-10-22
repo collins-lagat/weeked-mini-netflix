@@ -1,0 +1,21 @@
+@import '../../../styles/colors_fonts';
+
+.video {
+  display: flex;
+  margin-bottom: 100px;
+}
+.delete {
+  width: 20%;
+  color: $danger;
+}
+.main {
+  width: 80%;
+}
+.delete, .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete:hover {
+  color: $danger-darker;
+}

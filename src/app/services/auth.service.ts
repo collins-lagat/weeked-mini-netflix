@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { auth } from 'firebase/app';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   user$: Observable<any>;
+  userID$: Observable<any>;
+  id;
+  watchlist;
 
   constructor(private fireAuth: AngularFireAuth, private db: AngularFirestore, private router: Router) {
     this.user$ = this.fireAuth.authState.pipe(
@@ -21,8 +24,22 @@ export class AuthService {
           return of(null);
         }
       })
+    );
+    this.userID$ = this.fireAuth.authState.pipe(
+      map(user => {
+        if (user) {
+          return user.uid;
+        } else {
+          return of(null);
+        }
+      })
     )
+    this.user$.subscribe(user => {
+      this.watchlist = user.watchlist;
+    });
+    this.userID$.subscribe(id => this.id = id);
   }
+
 
   async sigIn(email: string, password: string) {
     try {
@@ -34,9 +51,7 @@ export class AuthService {
   }
 
   async logout() {
-    console.log('fired')
     await this.fireAuth.auth.signOut();
-    console.log('Done')
     this.router.navigate(['/welcome']);
     return;
   }

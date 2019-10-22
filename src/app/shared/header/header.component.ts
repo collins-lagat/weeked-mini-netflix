@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import {Location} from '@angular/common';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -11,10 +11,13 @@ export class HeaderComponent implements OnInit {
   @Input() addBack = false;
   backIcon;
 
-  constructor() { }
+  constructor(private _location: Location) { }
 
   ngOnInit() {
     this.backIcon = faArrowLeft;
+  }
+  goBack() {
+    this._location.back();
   }
 
 }

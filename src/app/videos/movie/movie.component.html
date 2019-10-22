@@ -1,1 +1,88 @@
-<p>movie works!</p>
+<div class=root>
+  <div>
+    <img class=poster [src]="movie?.wide_poster" alt="poster">
+  </div>
+  <div class=title-wrapper>
+    <span class=title>{{ movie?.title }}</span>
+  </div>
+  <div class=ratings>
+    <bar-rating [rate]="4" [max]="5"></bar-rating>
+  </div>
+  <div class=watch-now-wrapper>
+    <button class='bg-primary ripple'>Watch Now</button>
+  </div>
+  <div class=optional-actions>
+    <span class='watchlist'>
+      <fa-icon (click)='addToWatchList()' size='3x' [icon]='addToWatchlistIcon'></fa-icon>
+    </span>
+    <span class=share>
+      <fa-icon size='3x' [icon]='shareIcon'></fa-icon>
+    </span>
+  </div>
+  <div class=plot-wrapper>
+    <div>{{ movie?.plot}}</div>
+  </div>
+  <div class=meta-wrapper>
+    <div class=meta>
+      <span class=primary-meta>{{ movie?.genres[0].name }}</span>
+      <span class=secondary-meta>Genre</span>
+    </div>
+    <div class=meta>
+      <span class=primary-meta>{{ movie?.year }}</span>
+      <span class=secondary-meta>Year</span>
+    </div>
+    <div class=meta>
+      <span class=primary-meta>{{ movie?.runtime }}</span>
+      <span class=secondary-meta>Min</span>
+    </div>
+    <div class=meta>
+      <span class=primary-meta>{{ movie?.imdb }}</span>
+      <span class=secondary-meta>Imdb</span>
+    </div>
+  </div>
+  <div class=more-details>
+    <mat-tab-group mat-align-tabs="center" [selectedIndex]="detailsIndex">
+      <mat-tab label=Similar>
+        <div class=similar-wrapper>
+            <span class=similar-title>Customers Also watched</span>
+            <div class=suggestions>
+                <app-movie-card-small typeUrl='/movies' *ngFor="let movie of suggestions" [movie]='movie'></app-movie-card-small>
+            </div>
+        </div>
+      </mat-tab>
+      <mat-tab label='Cast & Crew'>
+        <div class=root>
+          <div *ngFor="let actor of movie?.actors" class='cast'>
+            <div class=img-name>
+                <mat-card class="cast-img-wrapper">
+                    <img mat-card-image class="cast-img" [src]="getImageURL(actor.profile_path)" alt="">
+                </mat-card>
+            </div>
+            <div class=cast-details>
+              <span class=character>{{ actor.character }}</span>
+              <span class=cast-name>{{ actor.name }}</span>
+            </div>>
+          </div>
+          <hr>
+          <div class=director-wrapper>
+            <div class=director>
+                <div class=img-name>
+                    <mat-card class="director-img-wrapper">
+                        <img mat-card-image class="director-img" [src]="getImageURL(movie?.director.profile_path)" alt="">
+                    </mat-card>
+                    <div class=director-name>
+                        <span>{{ movie?.director.name }}</span>
+                    </div>
+                </div>
+                <div class=director-title>
+                  <span>{{ movie?.director.job }}</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+

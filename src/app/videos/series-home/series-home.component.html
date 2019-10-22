@@ -1,10 +1,10 @@
 <div class='width-screen column'>
     <span class=text-xl>Featured Series</span>
     <div class="movie-container">
-      <app-movie-card *ngFor="let movie of featuredSeries" [large]=true [movie]="movie"></app-movie-card>
+      <app-movie-card typeUrl='/series' *ngFor="let movie of featuredSeries" [large]=true [movie]="movie"></app-movie-card>
     </div>
     <span class=text-xl>Series</span>
     <div class="movie-container">
-      <app-movie-card *ngFor="let show of series" [movie]="show"></app-movie-card>
+      <app-movie-card typeUrl='/series' *ngFor="let show of series" [movie]="show"></app-movie-card>
     </div>
 </div>

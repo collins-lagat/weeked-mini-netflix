@@ -1,9 +1,20 @@
-<div class='width-screen column-center'>
+<div class='width-screen column-center search'>
   <form class="form">
     <mat-form-field class="width-full">
-      <input matInput placeholder="Search" value="Carnival Row">
+      <input (input)='handleSearch()' [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}" matInput placeholder="Search" placeholder="Search by title">
     </mat-form-field>
   </form>
-  <button class='bg-primary'>Search</button>
+  <span *ngIf="filteredMovies.length > 0" class=title-text>Movies</span>
+  <div *ngIf="filteredMovies.length > 0">
+      <div *ngFor="let movie of filteredMovies">
+          <app-search-poster typeUrl='/movies' [video]='movie'></app-search-poster>
+      </div>
+  </div>
+  <span *ngIf="filteredSeries.length > 0" class=title-text>Series</span>
+  <div *ngIf="filteredSeries.length > 0">
+    <div *ngFor="let show of filteredSeries">
+        <app-search-poster typeUrl='/series' [video]='show'></app-search-poster>
+    </div>
+  </div>
 </div>
 

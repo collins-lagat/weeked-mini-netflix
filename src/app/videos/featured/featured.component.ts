@@ -27,7 +27,7 @@ export class FeaturedComponent implements OnInit {
     featuredSeries.subscribe((list: ISeries[]) => this.featuredSeries = list);
   }
 
-  get featured() {
+  get featured(): Array<IMovie | ISeries> {
     const arr: Array<IMovie | ISeries> = [];
     if (this.movies && this.series) {
       const movies: IMovie[] = JSON.parse(JSON.stringify(this.movies))

@@ -1,1 +1,95 @@
-<p>series works!</p>
+<div class=root>
+    <div>
+      <img class=poster [src]="series?.wide_poster" alt="poster">
+    </div>
+    <div class=title-wrapper>
+      <span class=title>{{ series?.title }}</span>
+    </div>
+    <div class=ratings>
+      <bar-rating [rate]="4" [max]="5"></bar-rating>
+    </div>
+    <div class=watch-now-wrapper>
+      <button class='bg-primary ripple'>Watch Now</button>
+    </div>
+    <div class=optional-actions>
+      <span class='watchlist'>
+        <fa-icon (click)='addToWatchList()' size='3x' [icon]='addToWatchlistIcon'></fa-icon>
+      </span>
+      <span class=share>
+        <fa-icon size='3x' [icon]='shareIcon'></fa-icon>
+      </span>
+    </div>
+    <div class=plot-wrapper>
+      <div>{{ series?.plot}}</div>
+    </div>
+    <div class=meta-wrapper>
+      <div class=meta>
+        <span class=primary-meta>{{ series?.genres[0].name }}</span>
+        <span class=secondary-meta>Genre</span>
+      </div>
+      <div class=meta>
+        <span class=primary-meta>{{ series?.year }}</span>
+        <span class=secondary-meta>Year</span>
+      </div>
+      <div class=meta>
+        <span class=primary-meta>{{ series?.runtime }}</span>
+        <span class=secondary-meta>Min</span>
+      </div>
+      <div class=meta>
+        <span class=primary-meta>{{ series?.imdb }}</span>
+        <span class=secondary-meta>Imdb</span>
+      </div>
+    </div>
+    <div class=season>
+        <mat-form-field>
+          <mat-label>Season</mat-label>
+          <mat-select [(value)]="season">
+            <mat-option *ngFor="let season of series?.seasons" [value]="season.number">
+              <span>Season {{season.number}}</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+    <div class=more-details>
+      <mat-tab-group mat-align-tabs="center" [selectedIndex]="detailsIndex">
+        <mat-tab label=Episodes>
+          <div class=episodes>
+            <div class=episode *ngFor="let episode of series?.seasons[season -1].episodes">
+                <div class=icon-wrap>
+                    <span class=play-icon>
+                        <fa-icon size='3x' [icon]='playIcon'></fa-icon>
+                    </span>
+                </div>
+                <div class=episode-details>
+                    {{episode.title}}
+                </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label='Cast & Crew'>
+          <div class=root>
+            <div *ngFor="let actor of series?.actors" class='cast'>
+              <div class=img-name>
+                  <mat-card class="cast-img-wrapper">
+                      <img mat-card-image class="cast-img" [src]="getImageURL(actor.profile_path)" alt="">
+                  </mat-card>
+              </div>
+              <div class=cast-details>
+                <span class=character>{{ actor.character }}</span>
+                <span class=cast-name>{{ actor.name }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class=similar-wrapper>
+        <span class=similar-title>Customers Also watched</span>
+        <div class=suggestions>
+            <app-movie-card-small typeUrl='/series' *ngFor="let series of suggestions" [movie]='series'></app-movie-card-small>
+        </div>
+    </div>
+  </div>
+
+
+

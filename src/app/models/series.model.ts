@@ -1,3 +1,5 @@
+import { IActor, IGenre } from './movie.model';
+
 interface IEpisode {
     number: number;
     title: string;
@@ -15,8 +17,8 @@ export interface ISeries {
     year: string;
     released: string;
     runtime: string;
-    actors: Array<string>;
-    genres: Array<string>;
+    actors: Array<IActor>;
+    genres: Array<IGenre>;
     plot: string;
     wide_poster: string;
     poster: string;
@@ -24,4 +26,3 @@ export interface ISeries {
     number_of_seasons: number;
     seasons: ISeason[];
   };
-  

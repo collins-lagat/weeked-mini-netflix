@@ -1,0 +1,23 @@
+.video {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.poster {
+  min-width: 80px;
+  max-width: 150px;
+  width: 50%;
+}
+.details {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.details > div {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.title-text {
+  font-size: 24px;
+}

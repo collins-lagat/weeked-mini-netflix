@@ -1,0 +1,21 @@
+<div class=video (click)='goTo()'>
+    <div class=poster>
+        <mat-card>
+            <img mat-card-image [src]="video.poster">
+        </mat-card>
+    </div>
+    <div class=details>
+      <div>
+        <span class=title-text>{{ video.title }}</span>
+      </div>
+      <div>
+        <span *ngFor="let genre of video.genres">{{ genre.name }}</span>
+      </div>
+      <div>
+        <span><span>{{ video.runtime }}</span> mins</span>
+      </div>
+      <div>
+        <bar-rating [rate]='imdbToRate(video.imdb)' [max]='5'></bar-rating>
+      </div>
+    </div>
+</div>

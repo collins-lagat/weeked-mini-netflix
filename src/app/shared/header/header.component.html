@@ -1,4 +1,4 @@
 <div class="header">
-    <span *ngIf="addBack" class='back-icon secondary'> <fa-icon size='lg' [icon]='backIcon'></fa-icon> </span>
+    <span *ngIf="addBack" (click)='goBack()' class='back-icon secondary'> <fa-icon size='lg' [icon]='backIcon'></fa-icon> </span>
     <img class=logo src="assets/logo_md.png" alt="logo">
 </div>

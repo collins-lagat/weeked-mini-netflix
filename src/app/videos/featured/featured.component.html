@@ -1,14 +1,14 @@
 <div class='width-screen column'>
-    <span style="" class=text-xl>Featured Movies & Series</span>
+    <span class=text-xl>Featured Movies & Series</span>
         <div class="movie-container">
-          <app-movie-card *ngFor="let movie of featured" [large]=true [movie]="movie"></app-movie-card>
+          <app-movie-card [typeUrl]='(movie.seasons)? "/series": "/movies"' *ngFor="let movie of featured" [large]=true [movie]="movie"></app-movie-card>
         </div>
     <span class=text-xl>Movies</span>
     <div class="movie-container">
-      <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+      <app-movie-card typeUrl='/movies' *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
     </div>
     <span class=text-xl>Series</span>
     <div class="movie-container">
-      <app-movie-card *ngFor="let show of series" [movie]="show"></app-movie-card>
+      <app-movie-card typeUrl='/series' *ngFor="let show of series" [movie]="show"></app-movie-card>
     </div>
 </div>

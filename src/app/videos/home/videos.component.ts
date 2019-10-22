@@ -15,11 +15,11 @@ export class VideosComponent implements OnInit {
     },
     {
       name: 'Series',
-      route: '/series'
+      route: '/series-home'
     },
     {
       name: 'Movies',
-      route: '/movies'
+      route: '/movies-home'
     }
   ];
 
