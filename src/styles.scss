@@ -27,6 +27,7 @@ $weeked-frontend-theme: mat-light-theme($weeked-frontend-primary, $weeked-fronte
 // that you are using.
 @include angular-material-theme($weeked-frontend-theme);
 
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @import  './styles/forms', './styles/buttons';

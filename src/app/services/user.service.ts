@@ -3,13 +3,14 @@ import { AuthService } from './auth.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { IMovie } from '../models/movie.model';
 import { ISeries } from '../models/series.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private authService: AuthService, private db: AngularFirestore) { }
+  constructor(private authService: AuthService, private db: AngularFirestore, private toast: ToastrService) { }
 
   async addToWatchlist(data: IMovie | ISeries) {
     try {
@@ -19,6 +20,7 @@ export class UserService {
           watchlist: this.authService.watchlist
         });
         console.log('Written');
+        this.toast.success('Videos Added to Watchlist');
       } else {
         const watchlist = [];
         watchlist.push(data);
@@ -26,13 +28,16 @@ export class UserService {
           watchlist
         });
         console.log('Written');
+        this.toast.success('Videos Added to Watchlist');
       }
     } catch (error) {
       console.log(error);
+      this.toast.error('Opps! Something went Wrong');
     }
   }
   async removeFromWatchlist(data: IMovie | ISeries) {
     if (this.authService.watchlist.length === 0) {
+      this.toast.error('Opps! Watchlist is Empty');
       console.log('watchlist is empty');
       return;
     }
@@ -42,15 +47,18 @@ export class UserService {
           watchlist: this.removeElement(data)
         });
         console.log('Written');
+        this.toast.success('Videos Remove From Watchlist');
       } else {
         const watchlist = [];
         await this.db.collection('users').doc(this.authService.id).update({
           watchlist
         });
         console.log('Written');
+        this.toast.success('Videos Remove From Watchlist');
       }
     } catch (error) {
       console.log(error);
+      this.toast.error('Opps! Something went Wrong');
     }
   }
 
